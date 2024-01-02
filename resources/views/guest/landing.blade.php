@@ -1,154 +1,338 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('title')
+    Home
+@endsection
 
-    <title>Sikku | @yield('title')</title>
+@push('css')
+@endpush
 
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,700,900' rel='stylesheet'>
+@section('content')
+    <section>
+        <!-- Heroes -->
+        <div class="container py-5">
+            <!-- Biaya -->
+            <div class="col-12 col-sm-8 col-md-8 col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="kanit text-center mb-3">Hitung Estimasi Biayamu!</h1>
+                        <form method="POST" action="/">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12 col-lg-4">
+                                    <div class="form-group  mb-3">
+                                        <label for="name">Nama</label>
+                                        <input id="name" type="text"
+                                            class="form-control @error('name') is-invalid @enderror" name="name"
+                                            value="{{ old('name') }}" placeholder="Nama Anda" autocomplete="name"
+                                            autofocus required>
 
-    <!-- Favicons -->
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="phone">No. Whatsapp</label>
+                                        <input id="phone" type="tel"
+                                            class="form-control @error('phone') is-invalid @enderror" name="phone"
+                                            value="{{ old('phone') }}" placeholder="Nomor Anda" autocomplete="phone"
+                                            required>
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <!-- Our style -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-    @stack('css')
-</head>
-
-<body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg border-bottom fixed-top bg-white" aria-label="Offcanvas navbar large">
-        <div class="container">
-            <a class="navbar-brand my-2" href="{{ route('home') }}"> <img src="{{ asset('assets/logo/Logo Main.png') }}"
-                    height="60" alt="HSI Logo" loading="lazy" /></a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2"
-                aria-labelledby="offcanvasNavbar2Label">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
-                    <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
+                                        @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email"
+                                            class="form-control @error('email') is-invalid @enderror" name="email"
+                                            value="{{ old('email') }}" placeholder="Email Anda (optional)"
+                                            autocomplete="email">
+                                        <div class="form-text" id="emailText">*Optional</div>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-lg btn-sikku-main kanit px-5">
+                                    Cek Harga
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </div>
+        </div>
+        <!-- Category -->
+        <div class="sikku-primary">
+            <div class="container py-5">
+                <h2 class="kanit text-center">Desain Interior Sesuai Ruangan</h2>
+                <h5 class="text-center mt-3 mb-4">Koleksi inspirasi desain interior Japandi oleh tim Dekoruma. Desain
+                    estetik,
+                    kualitas
+                    material terbaik.</h5>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4">
+                        <div class="card">
+                            <div class="ratio ratio-4x3">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title kanit">Kitchen Set</h4>
+                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="card">
+                            <div class="ratio ratio-4x3">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title kanit">Rumah</h4>
+                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="card">
+                            <div class="ratio ratio-4x3">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title kanit">Apartemen</h4>
+                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="card">
+                            <div class="ratio ratio-4x3">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title kanit">Lemari Custom</h4>
+                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="card">
+                            <div class="ratio ratio-4x3">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title kanit">Kantor</h4>
+                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="card">
+                            <div class="ratio ratio-4x3">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title kanit">Hotel</h4>
+                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cara Kerja -->
+        <div class="container text-center my-5">
+            <h2 class="kanit" style="font-weight: 600">Mengapa memilih Sikku?</h2>
+            <div class="row my-4">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="row align-items-start pt-3">
+                            <div class="col-12 col-md-2">
+                                <img src="{{ asset('assets/img/dummy/garansi.webp') }}" alt="dummy">
+                            </div>
+                            <div class="col-12 col-md-10 text-center">
+                                <h5 class="kanit"><b>Gratis Konsultasi</b></h5>
+                                <small class="d-none d-md-block">Ja</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="row align-items-start pt-3">
+                            <div class="col-12 col-md-2">
+                                <img src="{{ asset('assets/img/dummy/garansi.webp') }}" alt="dummy">
+                            </div>
+                            <div class="col-12 col-md-10 text-center">
+                                <h5 class="kanit"><b>Budget Fleksibel</b></h5>
+                                <small class="d-none d-md-block">Ja</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="row align-items-start pt-3">
+                            <div class="col-12 col-md-2">
+                                <img class="h-100" src="{{ asset('assets/img/dummy/garansi.webp') }}" alt="dummy">
+                            </div>
+                            <div class="col-md-10 text-start d-none d-md-block">
+                                <h5 class="kanit"><b>Garansi 2 Tahun</b></h5>
+                                <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
+                            </div>
+                            <div class="col-12 text-center">
+                                <h5 class="kanit"><b>Garansi 2 Tahun</b></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="kanit" style="font-weight: 600">5 Langkah Menuju Interior Impianmu</h2>
+
+            <div class="col-12 col-sm-8 col-md-8 col-lg-8 mx-auto my-5">
+                <div class="card text-center pt-5 pb-3">
+                    <h3 class="kanit" style="font-weight: 500 ">Kunjungan Pertama</h3>
+                    <p>Ada 3 opsi, yaitu konsultasi online, kunjungan langsung ke rumahmu, dan konsultasi di Dekoruma
+                        Experience Center.</p>
+                </div>
+            </div>
+
+            <button class="btn btn-lg btn-outline-sikku">Pelajari Lebih Lanjut</button>
+        </div>
+        <!-- Area Jangkauan -->
+
+        <!-- Testimoni -->
+
+        <!-- FAQ -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h1 class="kanit" style="font-weight: 700">Frequently Asked Questions</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat, tempor condimentum commodo.</p>
+                    <Button class="btn btn-lg btn-sikku-main">Read Our Full FAQs</Button>
+                    <p>Still have any questions? <a href="/"><b>Contact us</b></a></p>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img class="w-100" src="{{ asset('assets/img/dummy/contoh.png') }}" alt="dummy">
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="sikku-light">
+            <div class="container ">
+                <div class="row py-5">
+                    <div class="col-8">
+                        <h1 class="kanit">Siap Wujudkan Interior Japandi Impianmu?</h1>
+                    </div>
+                    <div class="col-4">
+                        <Button class="btn"></Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sikku-dark">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-12 col-md-3 mb-3">
+                        <a href="{{ route('home') }}"
+                            class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                            <img class="me-2" src="{{ asset('assets/logo/logo.png') }}" width="150px"
+                                alt="Logo Sikku">
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+
+                    </div>
+
+                    <div class="col-4 col-md-2 mb-3">
+                        <h5 class="kanit text-sikku">Informasi</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-white">Senin - Jumat</a>
+                            </li>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-white">09.00 - 18.00</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="https://wa.me/6287810081994"
+                                    class="nav-link p-0 text-white">0878-1008-1994</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="mailto:hi@sikku.id"
+                                    class="nav-link p-0 text-white">hi@sikku.id</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 col-md-2 mb-3">
+                        <h5 class="kanit text-sikku">Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 col-md-2 mb-3">
+                        <h5 class="kanit text-sikku">Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 pb-5 my-4 border-top">
+                    <p class="col-md-4 mb-0 text-white">&copy; 2023 Sikku, Inc</p>
+
+                    <a href="{{ route('home') }}"
+                        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                        <img class="bi me-2" src="{{ asset('assets/logo/icon.png') }}" alt="Icon Sikku" width="40">
+                    </a>
+
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3">
+                            <a class="text-white" href="https://www.tiktok.com/">
+                                <i class="fa-brands fa-tiktok fa-xl"></i>
+                            </a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Tentang HSI</a>
+                        <li class="ms-3">
+                            <a class="text-white" href="https://www.instagram.com/">
+                                <i class="fa-brands fa-instagram fa-xl"></i>
+                            </a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Produk</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Informasi</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Kontak</a>
+                        <li class="ms-3">
+                            <a class="text-white" href="https://www.youtube.com/">
+                                <i class="fa-brands fa-youtube fa-xl"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="navbar-nav flex-row">
-                @if (Route::has('login'))
-                    @auth
-                        <!-- Avatar -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatardropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('assets/img/profile/' . Auth::user()->avatar) }}"
-                                    class="rounded-circle shadow" height="35" alt="Profile" loading="lazy" />
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="avatardropdown">
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">Settings</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('home') }}">Beranda</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="btn btn-hsi-primary ms-3 me-1 px-3 rounded-4" href="{{ route('login') }}">Masuk</a>
-                        </li>
-
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="btn btn-hsi-primary px-3 rounded-4" href="{{ route('register') }}">Daftar</a>
-                            </li>
-                        @endif
-                    @endauth
-                @endif
-            </div>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
-    </nav>
 
-    <main>
+    </section>
+@endsection
 
-        @yield('content')
-
-    </main>
-
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-    <script>
-        //Back to Top Button
-        let mybutton = document.getElementById("btn-back-to-top");
-        let wabutton = document.getElementById("whatsapp");
-
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 20 ||
-                document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-                wabutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-                wabutton.style.display = "none";
-            }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
-    @stack('scripts')
-
-</body>
-
-</html>
+@push('scripts')
+@endpush
