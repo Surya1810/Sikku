@@ -30,6 +30,8 @@
     <meta name="msapplication-TileColor" content="#131313">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
@@ -44,7 +46,7 @@
     <nav class="navbar navbar-expand-md border-bottom fixed-top bg-white" aria-label="Offcanvas navbar large">
         <div class="container-fluid">
             <a class="navbar-brand my-2" href="{{ route('home') }}"> <img src="{{ asset('assets/logo/logo.png') }}"
-                    height="30" alt="Sikku" loading="lazy" /></a>
+                    height="40" alt="Sikku" loading="lazy" /></a>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar2"
                 aria-labelledby="offcanvasNavbar2Label">
                 <div class="offcanvas-header">
@@ -108,8 +110,8 @@
         </button>
     </main>
 
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('assets/select2/js/select2.full.min.js') }}"></script>
 
     <script>
         //Back to Top Button
