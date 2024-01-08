@@ -79,14 +79,18 @@
                                         <label for="status">Status</label>
                                         <select class="form-control @error('status') is-invalid @enderror" id="status"
                                             name="status" aria-label="status">
-                                            <option disabled>Pilih</option>
+                                            <option selected>Pilih</option>
                                             <option value="Discussion"
                                                 {{ old('status') == 'Discussion' ? 'selected' : '' }}>
                                                 Rumah</option>
                                             <option value="Planning" {{ old('status') == 'Planning' ? 'selected' : '' }}>
                                                 Kitchen Set</option>
-                                            <option value="On Going" {{ old('status') == 'On Going' ? 'selected' : '' }}>On
+                                            <option value="On Going" {{ old('status') == 'On Going' ? 'selected' : '' }}>
                                                 Lemari</option>
+                                            <option value="On Going" {{ old('status') == 'On Going' ? 'selected' : '' }}>
+                                                Apartemen</option>
+                                            <option value="Lain" {{ old('status') == 'On Going' ? 'selected' : '' }}>
+                                                Lainnya</option>
                                         </select>
                                         @error('status')
                                             <span class="invalid-feedback" role="alert">
@@ -110,74 +114,79 @@
         <div class="sikku-primary">
             <div class="container py-5">
                 <h2 class="kanit text-center">Desain Interior Sesuai Ruangan</h2>
-                <h5 class="text-center mt-3 mb-4">Koleksi inspirasi desain interior Japandi oleh tim Dekoruma. Desain
+                <h6 class="text-center mt-3 mb-4">Koleksi inspirasi desain interior Japandi oleh tim Dekoruma. Desain
                     estetik,
                     kualitas
-                    material terbaik.</h5>
+                    material terbaik.</h6>
                 <div class="row g-4">
                     <div class="col-6 col-md-4">
-                        <div class="card">
-                            <div class="ratio ratio-4x3">
-                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                        <div class="card border-0">
+                            <div class="ratio ratio-16x9">
+                                <img class="card-img-top" src="{{ asset('assets/img/category/kitchen.jpg') }}"
+                                    alt="Kitchen Set">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title kanit">Kitchen Set</h4>
-                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                                <h5 class="card-title kanit">Kitchen Set</h5>
+                                <small class="card-text">Desain dapur modern dengan kualitas premium</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
-                        <div class="card">
-                            <div class="ratio ratio-4x3">
-                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                        <div class="card border-0">
+                            <div class="ratio ratio-16x9">
+                                <img class="card-img-top" src="{{ asset('assets/img/category/house.jpg') }}"
+                                    alt="Rumah">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title kanit">Rumah</h4>
-                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                                <h5 class="card-title kanit">Rumah</h5>
+                                <small class="card-text">Desain dapur modern dengan kualitas premium</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
-                        <div class="card">
-                            <div class="ratio ratio-4x3">
-                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                        <div class="card border-0">
+                            <div class="ratio ratio-16x9">
+                                <img class="card-img-top" src="{{ asset('assets/img/category/bedroom.jpg') }}"
+                                    alt="Apartemen">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title kanit">Apartemen</h4>
-                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                                <h5 class="card-title kanit">Apartemen</h5>
+                                <small class="card-text">Desain dapur modern dengan kualitas premium</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
-                        <div class="card">
-                            <div class="ratio ratio-4x3">
-                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                        <div class="card border-0">
+                            <div class="ratio ratio-16x9">
+                                <img class="card-img-top" src="{{ asset('assets/img/dummy/16x9.png') }}" alt="Dummy">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title kanit">Lemari Custom</h4>
-                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                                <h5 class="card-title kanit">Lemari Custom</h5>
+                                <small class="card-text">Desain dapur modern dengan kualitas premium</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
-                        <div class="card">
-                            <div class="ratio ratio-4x3">
-                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                        <div class="card border-0">
+                            <div class="ratio ratio-16x9">
+                                <img class="card-img-top" src="{{ asset('assets/img/category/kantor.jpg') }}"
+                                    alt="Kantor">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title kanit">Kantor</h4>
-                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                                <h5 class="card-title kanit">Kantor</h5>
+                                <small class="card-text">Desain dapur modern dengan kualitas premium</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
-                        <div class="card">
-                            <div class="ratio ratio-4x3">
-                                <img class="card-img-top" src="{{ asset('assets/img/dummy/4x3.png') }}" alt="Dummy">
+                        <div class="card border-0">
+                            <div class="ratio ratio-16x9">
+                                <img class="card-img-top" src="{{ asset('assets/img/category/hotel.jpg') }}"
+                                    alt="Hotel">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title kanit">Hotel</h4>
-                                <p class="card-text">Desain dapur modern dengan kualitas premium</p>
+                                <h5 class="card-title kanit">Hotel</h5>
+                                <small class="card-text">Desain dapur modern dengan kualitas premium</small>
                             </div>
                         </div>
                     </div>
@@ -190,24 +199,24 @@
             <div class="row my-4">
                 <div class="col-4">
                     <div class="card p-3">
-                        <div class="row align-items-start">
+                        <div class="row align-items-center">
                             <div class="col-12 col-md-2 text-center">
                                 <img src="{{ asset('assets/img/vector/icon/03.png') }}" alt="gratis_konsultasi"
                                     height="50">
                             </div>
-                            <div class="col-md-10 text-start d-none d-md-block">
+                            <div class="col-md-10 text-start d-none d-md-block my-auto">
                                 <h5 class="kanit"><b>Gratis Konsultasi</b></h5>
                                 <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
                             </div>
                             <div class="col-12 text-center hidden-md-and-up">
-                                <h6 class="kanit mt-2"><b>Gratis Konsultasi</b></h6>
+                                <small class="kanit lh-1"><b>Gratis Konsultasi</b></small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="card p-3">
-                        <div class="row align-items-start">
+                        <div class="row align-items-center">
                             <div class="col-12 col-md-2 text-center">
                                 <img src="{{ asset('assets/img/vector/icon/02.png') }}" alt="budget" height="50">
                             </div>
@@ -216,14 +225,14 @@
                                 <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
                             </div>
                             <div class="col-12 text-center hidden-md-and-up">
-                                <h6 class="kanit mt-2"><b>Budget Fleksibel</b></h6>
+                                <small class="kanit lh-1"><b>Budget Fleksibel</b></small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="card p-3">
-                        <div class="row align-items-start">
+                        <div class="row align-items-center">
                             <div class="col-12 col-md-2 text-center">
                                 <img src="{{ asset('assets/img/vector/icon/01.png') }}" alt="garansi" height="50">
                             </div>
@@ -232,7 +241,7 @@
                                 <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
                             </div>
                             <div class="col-12 text-center hidden-md-and-up">
-                                <h6 class="kanit mt-2"><b>Garansi 2 Tahun</b></h6>
+                                <small class="kanit lh-1"><b>Garansi 2 Tahun</b></small>
                             </div>
                         </div>
                     </div>
@@ -258,57 +267,57 @@
                     <!-- Registrasi -->
                     <div class="carousel-item active" data-bs-interval="8000">
                         <div class="col-12">
-                            <img src="{{ asset('assets/img/vector/01.png') }}" class="d-block w-50 mx-auto"
+                            <img src="{{ asset('assets/img/vector/01.png') }}" class="d-block img-carousel mx-auto"
                                 alt="Registrasi">
                             <div id="caption-0" class="carousel-caption d-none d-md-block">
-                                <h3 class="kanit mb-4" style="font-weight: 500 ">Registrasi dan Konsultasi</h3>
-                                <h5>Ada 3 opsi, yaitu konsultasi online, kunjungan langsung ke rumahmu, dan konsultasi di
-                                    Sikku Experience Center.</h5>
+                                <h4 class="kanit mb-3" style="font-weight: 500 ">Registrasi dan Konsultasi</h4>
+                                <p>Ada 3 opsi, yaitu konsultasi online, kunjungan langsung ke rumahmu, dan konsultasi di
+                                    Sikku Experience Center.</p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="8000">
                         <div class="col-12">
-                            <img src="{{ asset('assets/img/vector/02.png') }}" class="d-block w-50 mx-auto"
+                            <img src="{{ asset('assets/img/vector/02.png') }}" class="d-block img-carousel mx-auto"
                                 alt="Registrasi">
                             <div id="caption-1" class="carousel-caption d-none d-md-block">
-                                <h3 class="kanit mb-4" style="font-weight: 500 ">Design</h3>
-                                <h5>Setelah pembayaran Booking Fee, desainer kami akan mendesain hunian impianmu sesuai
-                                    kebutuhan dan keinginanmu.</h5>
+                                <h4 class="kanit mb-3" style="font-weight: 500 ">Design</h4>
+                                <p>Setelah pembayaran Booking Fee, desainer kami akan mendesain hunian impianmu sesuai
+                                    kebutuhan dan keinginanmu.</p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="8000">
                         <div class="col-12">
-                            <img src="{{ asset('assets/img/vector/03.png') }}" class="d-block w-50 mx-auto"
+                            <img src="{{ asset('assets/img/vector/03.png') }}" class="d-block img-carousel mx-auto"
                                 alt="Registrasi">
                             <div id="caption-2" class="carousel-caption d-none d-md-block">
-                                <h3 class="kanit mb-4" style="font-weight: 500 ">Produksi</h3>
-                                <h5>Jika kamu sudah setuju dengan desain yang diberikan, interior siap diproduksi dengan
-                                    teknologi 4.0 setelah pembayaran 50%.</h5>
+                                <h4 class="kanit mb-3" style="font-weight: 500 ">Produksi</h4>
+                                <p>Jika kamu sudah setuju dengan desain yang diberikan, interior siap diproduksi dengan
+                                    teknologi 4.0 setelah pembayaran 50%.</p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="8000">
                         <div class="col-12">
-                            <img src="{{ asset('assets/img/vector/04.png') }}" class="d-block w-50 mx-auto"
+                            <img src="{{ asset('assets/img/vector/04.png') }}" class="d-block img-carousel mx-auto"
                                 alt="Registrasi">
                             <div id="caption-3" class="carousel-caption d-none d-md-block">
-                                <h3 class="kanit mb-4" style="font-weight: 500 ">Instalasi</h3>
-                                <h5>Tim kami akan memberikan update secara berkala. Setelah siap, instalasi dapat dimulai
-                                    setelah pelunasan sisa pembayaran.</h5>
+                                <h4 class="kanit mb-3" style="font-weight: 500 ">Instalasi</h4>
+                                <p>Tim kami akan memberikan update secara berkala. Setelah siap, instalasi dapat dimulai
+                                    setelah pelunasan sisa pembayaran.</p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="8000">
                         <div class="col-12">
-                            <img src="{{ asset('assets/img/vector/05.png') }}" class="d-block w-50 mx-auto"
+                            <img src="{{ asset('assets/img/vector/05.png') }}" class="d-block img-carousel mx-auto"
                                 alt="Registrasi">
                             <div id="caption-4" class="carousel-caption d-none d-md-block">
-                                <h3 class="kanit mb-4" style="font-weight: 500 ">Move in</h3>
-                                <h5>Interior barumu siap dihuni sejak 8 minggu setelah produksi. Kami juga memberikan
+                                <h4 class="kanit mb-3" style="font-weight: 500 ">Move in</h4>
+                                <p>Interior barumu siap dihuni sejak 8 minggu setelah produksi. Kami juga memberikan
                                     garansi
-                                    2 tahun setelah proses handover.</h5>
+                                    2 tahun setelah proses handover.</p>
                             </div>
                         </div>
                     </div>
@@ -326,7 +335,7 @@
             </div>
 
             <div class="col-12 col-sm-8 col-md-8 col-lg-8 mx-auto mb-5">
-                <div id="newTextPosition" class="card text-center pt-4 pb-3 px-5">
+                <div id="newTextPosition" class="card text-center pt-3 pb-1 px-3">
                     <!-- Text -->
                 </div>
             </div>
@@ -356,21 +365,14 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    <b>Apa yang harus dilakukan jika tertarik menggunakan jasa Desain Interior Dekoruma?</b>
+                                    <b></b>
                                     {{-- <i class="fas fa-question-circle fa-sm me-2 opacity-70"> --}}
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    Cukup daftarkan diri Anda di laman berikut Formulir Pendaftaran Proyek Desain Interior
-                                    Dekoruma. Selanjutnya, Tim Dekoruma akan menghubungi Anda untuk mengatur jadwal
-                                    konsultasi. Konsultasi ini GRATIS, tidak dipungut biaya apapun. Setelah selesai
-                                    melakukan konsultasi pertama, Anda cukup membayar booking fee sesuai nominal penawaran
-                                    harga yang disebutkan oleh Tim Dekoruma agar pengerjaan desain dapat segera dimulai.
-                                    Nominal penawaran harga akan dikirimkan oleh Tim Dekoruma dalam waktu 10-14 hari kerja.
-                                    Untuk mengetahui lebih lanjut mengenai detail prosedur Proyek Desain Interior Dekoruma,
-                                    Anda dapat membacanya di laman berikut Prosedur Proyek Desain Interior
+
                                 </div>
                             </div>
                         </div>
@@ -379,16 +381,12 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
-                                    <b>Apa Syarat & Ketentuan pengerjaaan proyek Desain Interior oleh
-                                        Dekoruma?</b>
+                                    <b></b>
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended
-                                    to demonstrate the <code>.accordion-flush</code> class. This is the second item's
-                                    accordion body. Let's imagine this being filled with
-                                    some actual content.
+                                <div class="accordion-body">
                                 </div>
                             </div>
                         </div>
@@ -397,17 +395,12 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                    <b>Berapa lama durasi pengerjaan proyek Desain Interior oleh Dekoruma?</b>
+                                    <b></b>
                                 </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended
-                                    to demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                                    accordion body. Nothing more exciting happening here
-                                    in terms of content, but just filling up the space to make it look, at least at
-                                    first glance, a bit more representative of how this would look in a real-world
-                                    application.
+                                <div class="accordion-body">
                                 </div>
                             </div>
                         </div>
@@ -416,17 +409,12 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
                                     aria-controls="flush-collapseFour">
-                                    <b>Apa saja style desain yang diusung oleh Dekoruma dalam proyek Desain Interiornya?</b>
+                                    <b></b>
                                 </button>
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended
-                                    to demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                                    accordion body. Nothing more exciting happening here
-                                    in terms of content, but just filling up the space to make it look, at least at
-                                    first glance, a bit more representative of how this would look in a real-world
-                                    application.
+                                <div class="accordion-body">
                                 </div>
                             </div>
                         </div>
@@ -435,18 +423,12 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFive" aria-expanded="false"
                                     aria-controls="flush-collapseFive">
-                                    <b>Apa yang terjadi jika desain pertama yang diberikan tidak sesuai dengan keinginan
-                                        klien?</b>
+                                    <b></b>
                                 </button>
                             </h2>
                             <div id="flush-collapseFive" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    to demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                                    accordion body. Nothing more exciting happening here
-                                    in terms of content, but just filling up the space to make it look, at least at
-                                    first glance, a bit more representative of how this would look in a real-world
-                                    application.
                                 </div>
                             </div>
                         </div>
@@ -545,7 +527,7 @@
 
                     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                         <li class="ms-3">
-                            <a class="text-white" href="https://www.tiktok.com/" target="_blank">
+                            <a class="text-white" href="https://www.tiktok.com/@sikku.id" target="_blank">
                                 <i class="fa-brands fa-tiktok fa-xl"></i>
                             </a>
                         </li>
@@ -555,7 +537,8 @@
                             </a>
                         </li>
                         <li class="ms-3">
-                            <a class="text-white" href="https://www.youtube.com/" target="_blank">
+                            <a class="text-white" href="https://www.youtube.com/@SIKKU-InteriorFurniture"
+                                target="_blank">
                                 <i class="fa-brands fa-youtube fa-xl"></i>
                             </a>
                         </li>

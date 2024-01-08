@@ -72,13 +72,19 @@
                         </li>
                     </ul>
                 </div>
-                <div class="offcanvas-footer">
-
-                </div>
+                {{-- <div class="offcanvas-footer">
+                    <div class="sikku-light w-100 h-100 pt-4">
+                        <div class="text-center mb-4">
+                            <button class="btn btn-lg btn-sikku-main">
+                                <p>Dapatkan bonus hingga 20jt</p>
+                            </button>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
             <div class="navbar-nav flex-row">
                 <li class="nav-item">
-                    <a class="btn btn-sikku-main px-4" href="{{ route('login') }}">Tanya Harga</a>
+                    <a class="btn btn-sikku-main px-4" href="/">Tanya Harga</a>
                 </li>
             </div>
         </div>

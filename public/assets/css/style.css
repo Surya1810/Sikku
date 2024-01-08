@@ -62,6 +62,10 @@ body::-webkit-scrollbar {
     z-index: 10;
     background-color: #cccccb;
 }
+.img-carousel {
+    width: 70%;
+    margin-bottom: 20px;
+}
 
 @media (min-width: 768px) {
     .hidden-md-and-up {
@@ -97,8 +101,8 @@ body::-webkit-scrollbar {
         position: fixed;
         bottom: 50%;
         left: -40px;
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
         padding-left: 30px;
         padding-right: 0px;
         border-radius: 50%;
@@ -106,6 +110,10 @@ body::-webkit-scrollbar {
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         z-index: 10;
+    }
+    .img-carousel {
+        width: 90%;
+        margin-bottom: 10px;
     }
 }
 
