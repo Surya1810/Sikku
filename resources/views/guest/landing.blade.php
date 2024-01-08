@@ -34,14 +34,43 @@
 
 @section('content')
     <section>
+        <!-- Campaign -->
+        <div id="carouselCampaign" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCampaign" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCampaign" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselCampaign" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="8000">
+                    <img src="{{ asset('assets/img/dummy/japandi-banner.webp') }}" class="d-block w-100" alt="dummy">
+                </div>
+                <div class="carousel-item" data-bs-interval="8000">
+                    <img src="{{ asset('assets/img/dummy/japandi-banner.webp') }}" class="d-block w-100" alt="dummy">
+                </div>
+                <div class="carousel-item" data-bs-interval="8000">
+                    <img src="{{ asset('assets/img/dummy/japandi-banner.webp') }}" class="d-block w-100" alt="dummy">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCampaign" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCampaign" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
         <!-- Heroes -->
-        <div class="container py-5">
+        <div class="container py-4">
             <!-- Biaya -->
             <div class="col-12 col-sm-8 col-md-8 col-lg-8 mx-auto">
                 <div class="card shadow">
                     <div class="card-body">
                         <h1 class="kanit text-center mb-3">Hitung Estimasi Biayamu!</h1>
-                        <form method="POST" action="/">
+                        <form method="POST" action="{{ route('hitung.store') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-12 col-lg-4">
@@ -64,7 +93,7 @@
                                         <label for="phone">No. Whatsapp</label>
                                         <input id="phone" type="tel"
                                             class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                            value="{{ old('phone') }}" placeholder="Nomor Anda" autocomplete="phone"
+                                            value="{{ old('phone') }}" placeholder="0800 0000 0000" autocomplete="phone"
                                             required>
 
                                         @error('phone')
@@ -76,23 +105,24 @@
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="form-group mb-3">
-                                        <label for="status">Status</label>
-                                        <select class="form-control @error('status') is-invalid @enderror" id="status"
-                                            name="status" aria-label="status">
+                                        <label for="type">Kebutuhan</label>
+                                        <select class="form-control @error('type') is-invalid @enderror" id="status"
+                                            name="type" aria-label="type">
                                             <option selected>Pilih</option>
-                                            <option value="Discussion"
-                                                {{ old('status') == 'Discussion' ? 'selected' : '' }}>
+                                            <option value="Rumah" {{ old('type') == 'Rumah' ? 'selected' : '' }}>
                                                 Rumah</option>
-                                            <option value="Planning" {{ old('status') == 'Planning' ? 'selected' : '' }}>
+                                            <option value="Kitchen Set"
+                                                {{ old('type') == 'Kitchen Set' ? 'selected' : '' }}>
                                                 Kitchen Set</option>
-                                            <option value="On Going" {{ old('status') == 'On Going' ? 'selected' : '' }}>
+                                            <option value="Lemari Kustom"
+                                                {{ old('type') == 'Lemari Kustom' ? 'selected' : '' }}>
                                                 Lemari</option>
-                                            <option value="On Going" {{ old('status') == 'On Going' ? 'selected' : '' }}>
+                                            <option value="Apartemen" {{ old('type') == 'Apartemen' ? 'selected' : '' }}>
                                                 Apartemen</option>
-                                            <option value="Lain" {{ old('status') == 'On Going' ? 'selected' : '' }}>
+                                            <option value="Lainnya" {{ old('type') == 'Lainnya' ? 'selected' : '' }}>
                                                 Lainnya</option>
                                         </select>
-                                        @error('status')
+                                        @error('type')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -113,8 +143,9 @@
         <!-- Category -->
         <div class="sikku-primary">
             <div class="container py-5">
-                <h2 class="kanit text-center">Desain Interior Sesuai Ruangan</h2>
-                <h6 class="text-center mt-3 mb-4">Koleksi inspirasi desain interior Japandi oleh tim Dekoruma. Desain
+                <h2 class="kanit text-center text-white">Desain Interior Sesuai Ruangan</h2>
+                <h6 class="text-center mt-3 mb-4 text-white">Koleksi inspirasi desain interior Japandi oleh tim Dekoruma.
+                    Desain
                     estetik,
                     kualitas
                     material terbaik.</h6>
@@ -204,10 +235,12 @@
                                 <img src="{{ asset('assets/img/vector/icon/03.png') }}" alt="gratis_konsultasi"
                                     height="50">
                             </div>
+                            <!-- desktop -->
                             <div class="col-md-10 text-start d-none d-md-block my-auto">
                                 <h5 class="kanit"><b>Gratis Konsultasi</b></h5>
                                 <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
                             </div>
+                            <!-- mobile -->
                             <div class="col-12 text-center hidden-md-and-up">
                                 <small class="kanit lh-1"><b>Gratis Konsultasi</b></small>
                             </div>
@@ -220,10 +253,12 @@
                             <div class="col-12 col-md-2 text-center">
                                 <img src="{{ asset('assets/img/vector/icon/02.png') }}" alt="budget" height="50">
                             </div>
+                            <!-- desktop -->
                             <div class="col-md-10 text-start d-none d-md-block">
                                 <h5 class="kanit"><b>Budget Fleksibel</b></h5>
                                 <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
                             </div>
+                            <!-- mobile -->
                             <div class="col-12 text-center hidden-md-and-up">
                                 <small class="kanit lh-1"><b>Budget Fleksibel</b></small>
                             </div>
@@ -236,10 +271,12 @@
                             <div class="col-12 col-md-2 text-center">
                                 <img src="{{ asset('assets/img/vector/icon/01.png') }}" alt="garansi" height="50">
                             </div>
+                            <!-- desktop -->
                             <div class="col-md-10 text-start d-none d-md-block">
                                 <h5 class="kanit"><b>Garansi 2 Tahun</b></h5>
                                 <small>Jaminan barang berkualitas bikin tenang & nyaman</small>
                             </div>
+                            <!-- mobile -->
                             <div class="col-12 text-center hidden-md-and-up">
                                 <small class="kanit lh-1"><b>Garansi 2 Tahun</b></small>
                             </div>
@@ -345,7 +382,7 @@
 
         <!-- Testimoni -->
         <div class="sikku-primary text-center py-5">
-            <h1 class="kanit">Kata Mereka Tentang Interior Japandi Impian yang Terwujud</h1>
+            <h1 class="kanit text-white">Kata Mereka Tentang Interior Japandi Impian yang Terwujud</h1>
             <Button class="btn btn-lg btn-sikku-light">Lihat Portofolio</Button>
         </div>
 
@@ -356,8 +393,18 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <h1 class="kanit" style="font-weight: 700">Frequently Asked Questions</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat, tempor condimentum commodo.</p>
+                    <!-- desktop -->
+                    <div class="d-none d-md-block">
+                        <h1 class="kanit" style="font-weight: 700">Frequently Asked Questions</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat, tempor condimentum commodo.
+                        </p>
+                    </div>
+                    <!-- mobile -->
+                    <div class="hidden-md-and-up text-center">
+                        <h1 class="kanit" style="font-weight: 700">Frequently Asked Questions</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat, tempor condimentum commodo.
+                        </p>
+                    </div>
 
                     <div class="accordion accordion-flush my-5" id="accordionFlushExample">
                         <div class="accordion-item">
@@ -433,9 +480,14 @@
                             </div>
                         </div>
                     </div>
-
-                    <a href="/" class="btn btn-lg btn-sikku-main">Read Our Full FAQs</a>
-                    <p>Still have any questions? <a href="/"><b>Contact us</b></a></p>
+                    <!-- desktop -->
+                    <div class="d-none d-md-block">
+                        <a href="{{ route('landing') }}" class="btn btn-lg btn-sikku-main">Read Our Full FAQs</a>
+                    </div>
+                    <!-- mobile -->
+                    <div class="hidden-md-and-up text-center">
+                        <a href="{{ route('landing') }}" class="btn btn-lg btn-sikku-main">Read Our Full FAQs</a>
+                    </div>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <img class="w-100" src="{{ asset('assets/img/vector/CS.png') }}" alt="Customer Service">
@@ -446,9 +498,11 @@
         <div class="sikku-light">
             <div class="container ">
                 <div class="row py-5">
+                    <!-- desktop -->
                     <div class="col-md-8 text-start d-none d-md-block">
                         <h1 class="kanit">Siap Wujudkan Interior Japandi Impianmu?</h1>
                     </div>
+                    <!-- mobile -->
                     <div class="col-12 text-center hidden-md-and-up">
                         <h1 class="kanit">Siap Wujudkan Interior Japandi Impianmu?</h1>
                     </div>
@@ -462,9 +516,9 @@
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-12 col-md-3 mb-3">
-                        <a href="{{ route('home') }}"
+                        <a href="{{ route('landing') }}"
                             class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                            <img class="me-2" src="{{ asset('assets/logo/logo-2.png') }}" width="150px"
+                            <img class="me-2" src="{{ asset('assets/logo/logo-light.png') }}" width="150px"
                                 alt="Logo Sikku">
                         </a>
                     </div>
@@ -474,7 +528,7 @@
                     </div>
 
                     <div class="col-4 col-md-2 mb-3">
-                        <h5 class="kanit text-sikku">Informasi</h5>
+                        <h5 class="kanit text-sikku-light">Informasi</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a class="nav-link p-0 text-white">Senin - Jumat</a>
                             </li>
@@ -490,7 +544,7 @@
                     </div>
 
                     <div class="col-4 col-md-2 mb-3">
-                        <h5 class="kanit text-sikku">Section</h5>
+                        <h5 class="kanit text-sikku-light">Section</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a>
                             </li>
@@ -504,7 +558,7 @@
                     </div>
 
                     <div class="col-4 col-md-2 mb-3">
-                        <h5 class="kanit text-sikku">Section</h5>
+                        <h5 class="kanit text-sikku-light">Section</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a>
                             </li>
@@ -520,7 +574,7 @@
                 <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 pb-5 my-4 border-top">
                     <p class="col-md-4 mb-0 text-white">&copy; 2023 Sikku, Inc</p>
 
-                    <a href="{{ route('home') }}"
+                    <a href="{{ route('landing') }}"
                         class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                         <img class="bi me-2" src="{{ asset('assets/logo/icon.png') }}" alt="Icon Sikku" width="40">
                     </a>

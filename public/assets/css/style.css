@@ -63,7 +63,7 @@ body::-webkit-scrollbar {
     background-color: #cccccb;
 }
 .img-carousel {
-    width: 70%;
+    width: 40%;
     margin-bottom: 20px;
 }
 
@@ -171,7 +171,7 @@ body::-webkit-scrollbar {
 }
 
 .accordion {
-    --bs-accordion-active-bg: #bda18c;
+    --bs-accordion-active-bg: #cccccb;
     --bs-accordion-active-color: #000;
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(63, 53, 44, 0.5);
     --bs-accordion-btn-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
@@ -180,7 +180,7 @@ body::-webkit-scrollbar {
 }
 
 .margin-top {
-    padding-top: 100px;
+    padding-top: 83px;
 }
 
 /* Sweetalert custom color */

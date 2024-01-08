@@ -47,7 +47,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-md border-bottom fixed-top bg-white" aria-label="Offcanvas navbar large">
         <div class="container-fluid">
-            <a class="navbar-brand my-2" href="{{ route('home') }}"> <img src="{{ asset('assets/logo/logo.png') }}"
+            <a class="navbar-brand my-2" href="{{ route('landing') }}"> <img src="{{ asset('assets/logo/logo.png') }}"
                     height="40" alt="Sikku" loading="lazy" /></a>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar2"
                 aria-labelledby="offcanvasNavbar2Label">
@@ -84,7 +84,8 @@
             </div>
             <div class="navbar-nav flex-row">
                 <li class="nav-item">
-                    <a class="btn btn-sikku-main px-4" href="/">Tanya Harga</a>
+                    <a class="btn btn-sikku-main px-4" href="https://wa.me/6287810081994" target="_blank">Tanya
+                        Harga</a>
                 </li>
             </div>
         </div>
