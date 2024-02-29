@@ -144,7 +144,7 @@
         <div class="sikku-primary">
             <div class="container py-5">
                 <h2 class="kanit text-center text-white">Desain Interior Sesuai Ruangan</h2>
-                <h6 class="text-center mt-3 mb-4 text-white">Koleksi inspirasi desain interior Japandi oleh tim Dekoruma.
+                <h6 class="text-center mt-3 mb-4 text-white">Koleksi inspirasi desain interior Japandi oleh tim Interna.
                     Desain
                     estetik,
                     kualitas
@@ -226,7 +226,7 @@
         </div>
         <!-- Mengapa Memilih -->
         <div class="container text-center my-5">
-            <h1 class="kanit" style="font-weight: 500">Mengapa memilih Sikku?</h1>
+            <h1 class="kanit" style="font-weight: 500">Mengapa memilih Interna?</h1>
             <div class="row my-4">
                 <div class="col-4">
                     <div class="card p-3">
@@ -309,7 +309,7 @@
                             <div id="caption-0" class="carousel-caption d-none d-md-block">
                                 <h4 class="kanit mb-3" style="font-weight: 500 ">Registrasi dan Konsultasi</h4>
                                 <p>Ada 3 opsi, yaitu konsultasi online, kunjungan langsung ke rumahmu, dan konsultasi di
-                                    Sikku Experience Center.</p>
+                                    Interna Experience Center.</p>
                             </div>
                         </div>
                     </div>
@@ -495,24 +495,24 @@
             </div>
         </div>
         <!-- Footer -->
-        <div class="sikku-light">
+        <div class="sikku-primary">
             <div class="container ">
                 <div class="row py-5">
                     <!-- desktop -->
-                    <div class="col-md-8 text-start d-none d-md-block">
+                    <div class="col-md-8 text-start d-none d-md-block text-white">
                         <h1 class="kanit">Siap Wujudkan Interior Japandi Impianmu?</h1>
                     </div>
                     <!-- mobile -->
-                    <div class="col-12 text-center hidden-md-and-up">
+                    <div class="col-12 text-center hidden-md-and-up text-white">
                         <h1 class="kanit">Siap Wujudkan Interior Japandi Impianmu?</h1>
                     </div>
                     <div class="col-12 col-md-4 text-center">
-                        <a href="/" class="btn btn-lg btn-sikku-main px-5">Mulai Disini</a>
+                        <a href="/" class="btn btn-lg btn-sikku-light px-5">Mulai Disini</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="sikku-dark">
+        <div class="sikku-light">
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-12 col-md-3 mb-3">
@@ -534,11 +534,11 @@
                             </li>
                             <li class="nav-item mb-2"><a class="nav-link p-0 text-white">09.00 - 18.00</a>
                             </li>
-                            <li class="nav-item mb-2"><a href="https://wa.me/6287810081994"
-                                    class="nav-link p-0 text-white">0878-1008-1994</a>
+                            <li class="nav-item mb-2"><a href="https://wa.me/6282215398499"
+                                    class="nav-link p-0 text-white">0822-1539-8499</a>
                             </li>
-                            <li class="nav-item mb-2"><a href="mailto:hi@sikku.id"
-                                    class="nav-link p-0 text-white">hi@sikku.id</a>
+                            <li class="nav-item mb-2"><a href="mailto:bisnis@interiorinterna.com"
+                                    class="nav-link p-0 text-white">bisnis@interiorinterna.com</a>
                             </li>
                         </ul>
                     </div>
@@ -572,7 +572,7 @@
                 </div>
 
                 <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 pb-5 my-4 border-top">
-                    <p class="col-md-4 mb-0 text-white">&copy; 2023 Sikku, Inc</p>
+                    <p class="col-md-4 mb-0 text-white">&copy; 2024 Interna, Inc</p>
 
                     <a href="{{ route('landing') }}"
                         class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">

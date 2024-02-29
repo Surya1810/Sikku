@@ -24,11 +24,11 @@ body::-webkit-scrollbar {
 
 ::-moz-selection {
     /* Code for Firefox */
-    background: #bda18c;
+    background: #1450a3;
 }
 
 ::selection {
-    background: #bda18c;
+    background: #1450a3;
 }
 
 /* Back to Top */
@@ -119,50 +119,50 @@ body::-webkit-scrollbar {
 
 /* Sikku Style */
 .text-sikku {
-    color: #9b6d4c;
+    color: #337ccf;
 }
 .text-sikku-light {
-    color: #bda18c;
+    color: #1450a3;
 }
 .sikku-primary {
-    background-color: #9b6d4c;
+    background-color: #337ccf;
 }
 .sikku-light {
-    background-color: #bda18c;
+    background-color: #1450a3;
 }
 .sikku-dark {
-    background-color: #3f352c;
+    background-color: #191d88;
 }
 .btn-sikku-main {
-    background-color: #9b6d4c;
+    background-color: #337ccf;
     color: white;
 }
 .btn-sikku-main:hover {
-    background-color: #3f352c;
+    background-color: #191d88;
     color: white;
 }
 
 .btn-sikku-light {
-    background-color: #bda18c;
+    background-color: #1450a3;
     color: white;
 }
 .btn-sikku-light:hover {
-    background-color: #3f352c;
+    background-color: #191d88;
     color: white;
 }
 
 .btn-outline-sikku {
     border-color: rgba(155, 109, 76, 0.75);
-    color: #9b6d4c;
+    color: #337ccf;
 }
 .btn-outline-sikku:hover {
     border-color: rgba(155, 109, 76, 0.75);
     box-shadow: 0 0 0 0.2rem rgba(63, 53, 44, 0.5);
-    background-color: #9b6d4c;
+    background-color: #337ccf;
     color: white;
 }
 .offcanvas-header {
-    background-color: #9b6d4c;
+    background-color: #337ccf;
 }
 
 .form-control:focus {

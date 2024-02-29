@@ -12,7 +12,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sikku | @yield('title')</title>
+    <title>Interna | @yield('title')</title>
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Archivo:400,500,600,700,900' rel='stylesheet'>
@@ -84,7 +84,7 @@
             </div>
             <div class="navbar-nav flex-row">
                 <li class="nav-item">
-                    <a class="btn btn-sikku-main px-4" href="https://wa.me/6287810081994" target="_blank">Tanya
+                    <a class="btn btn-sikku-main px-4" href="https://wa.me/6282215398499" target="_blank">Tanya
                         Harga</a>
                 </li>
             </div>
@@ -104,7 +104,7 @@
         <!-- Whatsapp button -->
         <button type="button" class="btn btn-floating btn-lg border-0 shadow-md rounded-circle d-none" id="whatsapp"
             aria-label="Whatsapp">
-            <a href="https://wa.me/6287810081994" target="_blank"><i class="fa-brands fa-whatsapp fa-2xl text-center"
+            <a href="https://wa.me/6282215398499" target="_blank"><i class="fa-brands fa-whatsapp fa-2xl text-center"
                     style="color: #fff;margin-top: 10px;"></i></a>
         </button>
         <!-- Offcanvas button -->
